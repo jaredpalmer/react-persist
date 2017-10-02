@@ -1,4 +1,4 @@
-# 💾  React Persist
+# React Persist 💾
 
 Persist and rehydrate React state to localStorage.
 
