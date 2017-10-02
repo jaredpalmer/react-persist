@@ -1,6 +1,6 @@
 # React Persist
 
-Persist and rehydrate react state to localStorage.
+Persist and rehydrate React state to localStorage.
 
 ```
 npm install react-persist --save
@@ -42,7 +42,7 @@ class Signup extends React.Component {
 
 ### Props
 
-Only two props! 
+Only a few of them!
 
 - `name: string`: LocalStorage key to save form state to
 - `data: any`: Data to persist
