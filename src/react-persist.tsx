@@ -27,7 +27,7 @@ export class Persist extends React.Component<PersistProps, {}> {
   componentDidMount() {
     const data = window.localStorage.getItem(this.props.name);
     if (data && data !== null) {
-      this.props.onMount(data);
+      this.props.onMount(JSON.parse(data));
     }
   }
 
