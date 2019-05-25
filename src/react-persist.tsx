@@ -17,8 +17,8 @@ export class Persist extends React.Component<PersistProps, {}> {
 
   persist = debounce((data: any) => {
     const storage = this.props.useSessionStorage
-      ? window.localStorage
-      : window.sessionStorage;
+      ? window.sessionStorage
+      : window.localStorage;
     storage.setItem(this.props.name, JSON.stringify(data));
   }, this.props.debounce);
 
