@@ -7,6 +7,7 @@ export interface PersistProps {
   data: any;
   debounce?: number;
   onMount: (data: any) => void;
+  useSessionStorage?: boolean;
 }
 
 export class Persist extends React.Component<PersistProps, {}> {
@@ -15,7 +16,10 @@ export class Persist extends React.Component<PersistProps, {}> {
   };
 
   persist = debounce((data: any) => {
-    window.localStorage.setItem(this.props.name, JSON.stringify(data));
+    const storage = this.props.useSessionStorage
+      ? window.localStorage
+      : window.sessionStorage;
+    storage.setItem(this.props.name, JSON.stringify(data));
   }, this.props.debounce);
 
   componentWillReceiveProps({ data }: PersistProps) {
