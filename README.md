@@ -38,6 +38,7 @@ class Signup extends React.Component {
       </form>
     )
   }
+}
 ```
 
 ### Props
@@ -48,6 +49,7 @@ Only a few of them!
 - `data: any`: Data to persist
 - `debounce:? number`:  Number of ms to debounce the function that saves form state. Default is `300`.
 - `onMount: (data: any) => void`: (optionally) Hydrate your data (into React state). Will only be called if data is not `null`.
+- `useSessionStorage?: boolean`: Use `sessionStorage` instead of `localStorage`. Default is `false`.
 
 
 ## Author
