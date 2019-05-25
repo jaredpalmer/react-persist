@@ -29,7 +29,10 @@ export class Persist extends React.Component<PersistProps, {}> {
   }
 
   componentDidMount() {
-    const data = window.localStorage.getItem(this.props.name);
+    const storage = this.props.useSessionStorage
+      ? window.sessionStorage
+      : window.localStorage;
+    const data = storage.getItem(this.props.name);
     if (data) {
       this.props.onMount(JSON.parse(data));
     }
